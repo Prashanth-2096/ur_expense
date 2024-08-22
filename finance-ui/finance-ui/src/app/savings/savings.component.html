@@ -1,0 +1,17 @@
+<div class="saving-goals-container">
+    <h2>Saving Goals</h2>
+    <div *ngFor="let goal of goals" class="goal-item">
+      <p>{{ goal.description }}</p>
+      <div class="progress-bar">
+        <div class="progress" [style.width]="calculateProgress(goal) + '%'"></div>
+      </div>
+      <span>{{ goal.saved | currency }} / {{ goal.target | currency }}</span>
+    </div>
+    <div class="add-goal-form">
+      <h3>Add New Goal</h3>
+      <input type="text" placeholder="Goal Description" [(ngModel)]="newGoal.description">
+      <input type="number" placeholder="Target Amount" [(ngModel)]="newGoal.target">
+      <button (click)="addGoal()">Add Goal</button>
+    </div>
+  </div>
+  

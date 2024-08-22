@@ -1,0 +1,62 @@
+/* Sidebar container */
+.sidebar {
+  background-color: #f8f9fa; /* Light background */
+  height: 100vh; /* Full viewport height */
+  position: relative ; /* Fixed to the side */
+  top: 1px;
+  left: -12px;
+  padding-top: 0px;
+  width: 250px; /* Sidebar width */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Sticky sidebar content */
+.sidebar-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding-top: 10px;
+}
+
+/* Sidebar links */
+.nav-link {
+  font-size: 1rem;
+  padding: 10px 15px;
+  color: #333; /* Default text color */
+  text-decoration: none; /* Remove underline */
+  display: block;
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Active link styling */
+.nav-link.active {
+  background-color: #73B744; /* Active link background */
+  color: white; /* Active link text color */
+}
+
+/* Hover effect for links */
+.nav-link:hover {
+  background-color: #049648; /* Hover background */
+  color: white; /* Hover text color */
+  cursor: pointer;
+  
+}
+
+/* Adjust content margin to account for the fixed sidebar */
+.main-content {
+  margin-left: 200px; /* Sidebar width */
+  padding: 20px;
+}
+
+/* Responsive behavior for small screens */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Full width on small screens */
+    height: auto; /* Auto height */
+    position: relative; /* Relative positioning */
+  }
+
+  .main-content {
+    margin-left: 0; /* Reset margin on small screens */
+  }
+}

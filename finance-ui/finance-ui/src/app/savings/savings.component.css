@@ -1,0 +1,96 @@
+/* Saving goals container */
+.saving-goals-container {
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Title style */
+  .saving-goals-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333; /* Dark text color */
+  }
+  
+  /* Goal item container */
+  .goal-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Goal description text */
+  .goal-item p {
+    font-size: 18px;
+    margin: 0;
+    color: #666; /* Darker text color */
+  }
+  
+  /* Progress bar container */
+  .progress-bar {
+    background-color: #e9ecef; /* Light gray background for progress */
+    border-radius: 4px;
+    overflow: hidden;
+    height: 20px; /* Height of the progress bar */
+    margin: 10px 0; /* Spacing around the progress bar */
+  }
+  
+  /* Progress indicator */
+  .progress {
+    background-color: #049648; /* Progress bar color */
+    height: 100%;
+    width: 0; /* Dynamic width set by TypeScript */
+    transition: width 0.3s ease; /* Smooth transition for progress change */
+  }
+  
+  /* Progress text */
+  .goal-item span {
+    display: block;
+    font-size: 16px;
+    color: #333; /* Dark text color */
+  }
+  
+  /* Add goal form styling */
+  .add-goal-form {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Add goal form header */
+  .add-goal-form h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333; /* Dark text color */
+  }
+  
+  /* Form inputs */
+  .add-goal-form input {
+    width: calc(100% - 22px); /* Full width minus padding */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  /* Add goal button */
+  .add-goal-form button {
+    background-color: #049648; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-goal-form button:hover {
+    background-color: #026631; /* Darker button color on hover */
+  }
+  

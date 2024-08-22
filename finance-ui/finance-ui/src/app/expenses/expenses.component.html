@@ -1,0 +1,16 @@
+<div class="expenses-container">
+    <h2>Expenses</h2>
+    <div class="expense-list">
+      <div *ngFor="let expense of expenses" class="expense-item">
+        <p>{{ expense.description }}</p>
+        <span>{{ expense.amount | currency }}</span>
+      </div>
+    </div>
+    <div class="add-expense-form">
+      <h3>Add New Expense</h3>
+      <input type="text" placeholder="Description" [(ngModel)]="newExpense.description">
+      <input type="number" placeholder="Amount" [(ngModel)]="newExpense.amount">
+      <button (click)="addExpense()">Add Expense</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,79 @@
+/* Expenses container */
+.expenses-container {
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Title style */
+  .expenses-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333; /* Dark text color */
+  }
+  
+  /* Expense item container */
+  .expense-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Expense description text */
+  .expense-item p {
+    font-size: 18px;
+    margin: 0;
+    color: #666; /* Darker text color */
+  }
+  
+  /* Expense amount */
+  .expense-item span {
+    display: block;
+    font-size: 16px;
+    color: #333; /* Dark text color */
+  }
+  
+  /* Add expense form styling */
+  .add-expense-form {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Add expense form header */
+  .add-expense-form h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333; /* Dark text color */
+  }
+  
+  /* Form inputs */
+  .add-expense-form input {
+    width: calc(100% - 22px); /* Full width minus padding */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  /* Add expense button */
+  .add-expense-form button {
+    background-color: #049648; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-expense-form button:hover {
+    background-color: #026631; /* Darker button color on hover */
+  }
+  

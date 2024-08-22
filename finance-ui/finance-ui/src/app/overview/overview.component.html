@@ -1,0 +1,38 @@
+<div class="overview-container">
+    <h2>Dashboard Overview</h2>
+  
+    <!-- Income Section -->
+    <div class="section">
+      <h3>Income</h3>
+      <div *ngIf="incomeData.length === 0" class="no-data">No income data available.</div>
+      <div *ngFor="let income of incomeData" class="data-item">
+        <p><strong>Source:</strong> {{ income.source }}</p>
+        <p><strong>Amount:</strong> {{ income.amount | currency }}</p>
+      </div>
+    </div>
+  
+    <!-- Expenses Section -->
+    <div class="section">
+      <h3>Expenses</h3>
+      <div *ngIf="expensesData.length === 0" class="no-data">No expenses data available.</div>
+      <div *ngFor="let expense of expensesData" class="data-item">
+        <p><strong>Description:</strong> {{ expense.description }}</p>
+        <p><strong>Amount:</strong> {{ expense.amount | currency }}</p>
+      </div>
+    </div>
+  
+    <!-- Savings Section -->
+    <div class="section">
+      <h3>Savings Goals</h3>
+      <div *ngIf="savingsData.length === 0" class="no-data">No savings data available.</div>
+      <div *ngFor="let goal of savingsData" class="data-item">
+        <p><strong>Description:</strong> {{ goal.description }}</p>
+        <p><strong>Target:</strong> {{ goal.target | currency }}</p>
+        <p><strong>Saved:</strong> {{ goal.saved | currency }}</p>
+        <div class="progress-bar">
+          <div class="progress" [style.width]="calculateProgress(goal) + '%'"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

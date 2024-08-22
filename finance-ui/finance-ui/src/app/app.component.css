@@ -1,0 +1,22 @@
+/* Set the sidebar and main content to take up the full viewport height */
+.sidebar, .content {
+  height: 100vh; /* Full viewport height */
+}
+
+/* Optional: Add background color to visually distinguish the sections */
+.sidebar {
+  background-color: #f8f9fa; /* Light background color for the sidebar */
+  padding: 15px; /* Add some padding to the sidebar content */
+}
+
+.content {
+  background-color: #ffffff; /* White background for the main content */
+  padding: 20px; /* Add some padding to the main content */
+  overflow-y: auto; /* Allow scrolling if the content exceeds the viewport height */
+}
+
+/* Ensure that the row inside container-fluid maintains proper spacing */
+.container-fluid .row {
+  margin: 0;
+  padding: 0;
+}

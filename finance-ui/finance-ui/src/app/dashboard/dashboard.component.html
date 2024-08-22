@@ -1,0 +1,71 @@
+<div class="container mt-4">
+  
+    <!-- Income and Expense Summary -->
+    <div class="row my-4">
+      <div class="col-md-6">
+        <h4>Income and Expense Summary</h4>
+        <!-- <canvas baseChart
+            [data]="chartData"
+            type]="chartType"
+            [options]="chartOptions">
+        </canvas> -->
+      </div>
+    </div>
+  
+    <!-- Expense Tracking -->
+    <div class="row my-4">
+      <div class="col-md-12">
+        <h4>Expense Tracking</h4>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Budget</th>
+              <th>Spent</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let expense of expenses">
+              <td>{{ expense.category }}</td>
+              <td>{{ expense.budget | currency }}</td>
+              <td>{{ expense.spent | currency }}</td>
+              <td>
+                <div class="progress">
+                  <div class="progress-bar"
+                       role="progressbar"
+                       [style.width.%]="(expense.spent / expense.budget) * 100"
+                       [ngClass]="{
+                         'bg-success': (expense.spent / expense.budget) < 0.7,
+                         'bg-warning': (expense.spent / expense.budget) >= 0.7 && (expense.spent / expense.budget) < 1,
+                         'bg-danger': (expense.spent / expense.budget) >= 1
+                       }">
+                    {{ (expense.spent / expense.budget) * 100 | number: '1.0-0' }}%
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <!-- Savings Goals -->
+    <div class="row my-4">
+      <div class="col-md-12">
+        <h4>Savings Goals</h4>
+        <div *ngFor="let goal of savingsGoals" class="mb-4">
+          <h5>{{ goal.name }}</h5>
+          <div class="progress">
+            <div class="progress-bar bg-info"
+                 role="progressbar"
+                 [style.width.%]="(goal.saved / goal.target) * 100">
+              {{ (goal.saved / goal.target) * 100 | number: '1.0-0' }}%
+            </div>
+          </div>
+          <p>{{ goal.saved | currency }} of {{ goal.target | currency }} saved</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

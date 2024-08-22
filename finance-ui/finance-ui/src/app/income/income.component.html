@@ -1,0 +1,16 @@
+<div class="income-container">
+    <h2>Income</h2>
+    <div class="income-list">
+      <div *ngFor="let income of incomes" class="income-item">
+        <p>{{ income.source }}</p>
+        <span>{{ income.amount | currency }}</span>
+      </div>
+    </div>
+    <div class="add-income-form">
+      <h3>Add New Income</h3>
+      <input type="text" placeholder="Source" [(ngModel)]="newIncome.source">
+      <input type="number" placeholder="Amount" [(ngModel)]="newIncome.amount">
+      <button (click)="addIncome()">Add Income</button>
+    </div>
+  </div>
+  
