@@ -6,10 +6,11 @@ finance-api/routes/__pycache__
 /tmp
 /out-tsc
 /bazel-out
-venv/
+finance-api/.env
 routes/
 # Node
 finance-api/node_modules/
+finance-api/venv/Lib/
 finance-ui/node_modules/
 **/node_modules/
 npm-debug.log
