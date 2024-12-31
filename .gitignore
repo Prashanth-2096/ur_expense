@@ -1,7 +1,7 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
-finance-api/_pycache_/
-finance-api/routes/_pycache_
+finance-api/__pycache__/
+finance-api/routes/__pycache__
 /dist
 /tmp
 /out-tsc
@@ -14,6 +14,11 @@ finance-ui/finance-ui/node_modules/
 **/node_modules/
 npm-debug.log
 yarn-error.log
+
+finance-ui/finance-ui/.angular/
+finance-ui/finance-ui/.vscode/
+
+finance-api/__pycache__/
 
 # IDEs and editors
 .idea/
