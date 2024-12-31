@@ -1,13 +1,16 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
-_pycache_/
+finance-api/_pycache_/
+finance-api/routes/_pycache_
 /dist
 /tmp
 /out-tsc
 /bazel-out
-
+venv/
+routes/
 # Node
-node_modules/
+finance-api/node_modules/
+finance-ui/node_modules/
 npm-debug.log
 yarn-error.log
 
