@@ -26,6 +26,14 @@ class Signup(Resource):
     def post(self):
         user_data = request.json
         print(user_data)
+
+        # Check if all required fields are present and non-empty
+        required_fields = ['username', 'email', 'phone', 'password', 'confirm_password']
+        for field in required_fields:
+            if field not in user_data or not user_data[field].strip():
+                return {'message': f'{field} is required and cannot be empty'}, 400
+
+        # Check if passwords match
         if user_data['password'] != user_data['confirm_password']:
             return {'message': 'Passwords do not match'}, 400
 
@@ -48,6 +56,7 @@ class Signup(Resource):
         result = users_collection.insert_one(user)
         return {'message': 'User created', 'id': str(result.inserted_id)}, 201
 
+
 @auth_ns.route('/login')
 class Login(Resource):
     @auth_ns.doc('login')
@@ -60,6 +69,24 @@ class Login(Resource):
         # Retrieve the user document from MongoDB
         user = users_collection.find_one({'email': email})
         if user and check_password_hash(user['password'], password):
-            return {'message': 'Login successful'}, 200
+            return {'success': True, 'message': 'Login Successful'}, 200
         else:
-            return {'message': 'Invalid email or password'}, 401
+            return {'success': False, 'message': 'Invalid email or password'}, 401
+
+@auth_ns.route('/profile')
+class Profile(Resource):
+    @auth_ns.doc('get_profile')
+    def get(self):
+        # Get the email from query parameters
+        email = request.args.get('email')
+
+        if not email:
+            return {'message': 'Email is required'}, 400
+
+        # Fetch user data from MongoDB
+        user = users_collection.find_one({'email': email}, {'_id': 0, 'password': 0})  # Exclude sensitive fields
+
+        if user:
+            return user, 200
+        else:
+            return {'message': 'User not found'}, 404

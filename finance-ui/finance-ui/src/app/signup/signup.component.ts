@@ -19,10 +19,17 @@ export class SignupComponent {
     password: '',
     confirmPassword: ''
   };
+  message: string | undefined;
 
   constructor(private http: HttpClient, private router: Router) {}
 
   onSubmit() {
+    // Validate required fields
+    if (!this.model.username || !this.model.email || !this.model.phone || !this.model.password) {
+      this.message = 'All fields are required.';
+      return;
+    }
+
     if (this.model.password !== this.model.confirmPassword) {
       alert('Passwords do not match!');
       console.log("Hello")

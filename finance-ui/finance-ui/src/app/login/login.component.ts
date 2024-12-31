@@ -21,12 +21,13 @@ export class LoginComponent {
   onSubmit() {
     this.authService.login(this.model).subscribe(
       (response: any) => {
-        console.log(response)
-        if (response.success) {
+        if (response.success == true) {
           this.message = 'Login Successful';
+          console.log('Login Successful, navigating to dashboard...');
           this.router.navigate(['/dashboard']);
         } else {
           this.message = 'Invalid email or password';
+          console.log('Invalid login credentials');
         }
       },
       (error) => {
@@ -35,4 +36,5 @@ export class LoginComponent {
       }
     );
   }
+  
 }

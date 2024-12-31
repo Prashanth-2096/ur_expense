@@ -29,24 +29,24 @@ export class AuthService {
 
   // Income
   getIncome(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/finance/income`); // Ensure you have this endpoint on your backend
+    return this.http.get(`${this.apiUrl}/finance/transactions`); // Ensure you have this endpoint on your backend
   }
 
   addIncome(income: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/finance/income`, income); // Ensure you have this endpoint on your backend
+    return this.http.post(`${this.apiUrl}/finance/transactions`, income); // Ensure you have this endpoint on your backend
   }
 
   // Savings Goals
   getSavings(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/finance/savings`); // Ensure you have this endpoint on your backend
+    return this.http.get(`${this.apiUrl}/finance/goals`); // Ensure you have this endpoint on your backend
   }
 
   addSavingsGoal(goal: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/finance/savings`, goal); // Ensure you have this endpoint on your backend
+    return this.http.post(`${this.apiUrl}/finance/goals`, goal); // Ensure you have this endpoint on your backend
   }
 
-  getUserProfile(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/auth/profile`); // Adjust endpoint as needed
+  getUserProfile(email: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/profile`, { params: { email } });
   }
   
 }

@@ -11,27 +11,33 @@ import { AuthService } from '../auth.service';
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent implements OnInit {
-  user: any = {}; // Replace with a suitable type if available
+  user: any = {};  // User object to store profile data
+  email: string = '';  // Store the user's email
 
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
+    // Retrieve the stored email from localStorage
+    this.email = localStorage.getItem('email') || '';  
     this.loadUserProfile();
   }
 
   loadUserProfile(): void {
-    // Replace with the actual method to get user details
-    this.authService.getUserProfile().subscribe(
-      (data) => {
-        this.user = data;
-      },
-      (error) => {
-        console.error('Error fetching user profile', error);
-      }
-    );
+    if (this.email) {
+      this.authService.getUserProfile(this.email).subscribe(
+        (data) => {
+          this.user = data;  // Assign the profile data to the user object
+        },
+        (error) => {
+          console.error('Error fetching user profile', error);
+        }
+      );
+    } else {
+      console.error('Email not found. Unable to load profile.');
+    }
   }
 
   editProfile(): void {
-    // Implement logic to navigate to the profile edit form or open a modal
+    // Implement logic to edit profile
   }
 }
