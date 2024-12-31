@@ -10,7 +10,7 @@ finance-api/.env
 routes/
 # Node
 finance-api/node_modules/
-finance-api/venv/Lib/
+finance-api/venv/
 finance-ui/node_modules/
 **/node_modules/
 npm-debug.log
