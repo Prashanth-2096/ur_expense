@@ -10,13 +10,13 @@ venv/
 routes/
 # Node
 finance-api/node_modules/
-finance-ui/finance-ui/node_modules/
+finance-ui/node_modules/
 **/node_modules/
 npm-debug.log
 yarn-error.log
 
-finance-ui/finance-ui/.angular/
-finance-ui/finance-ui/.vscode/
+finance-ui/.angular/
+finance-ui/.vscode/
 
 finance-api/__pycache__/
 
