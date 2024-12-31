@@ -1,9 +1,8 @@
 import os
-
+from dotenv import load_dotenv
 from pymongo import MongoClient
 
 class Config:
     """Base configuration."""
-    SECRET_KEY = 'Lg18fp9BZceyWjrWTA1XceMqbWnrkX7a+T0+d2BGlCQzox1uQ/Ltq5LZ4l+R3yB34wzXxES7I5uvoOnUuaAsGL0uo0sMdFbebGAFNIe8dlgI25R6e+I7/rclKqDksgIj'
-    MONGO_URI = 'mongodb://localhost:27017'
-
+    SECRET_KEY :str = os.getenv("SECRET_KEY")
+    MONGO_URI : str = os.getenv("MONGO_URI")
